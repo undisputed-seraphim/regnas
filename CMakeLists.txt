@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.25)
+project(regnas VERSION 0.0.1 LANGUAGES C CXX)
+
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+set(Boost_USE_STATIC_LIBS ON)
+find_package(Boost 1.87 REQUIRED CONFIG COMPONENTS system json)
+find_package(quill 8.1 REQUIRED)
+
+message(STATUS "Boost version: ${Boost_VERSION}")
+
+add_subdirectory(src)
